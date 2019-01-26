@@ -62,9 +62,9 @@ def train(outputName, datasets, params):
     #teErrors.append(teError)
     
     # Indicate a new training on the result file
-    resultFile = open(outputName + "_train.csv", "a") # Open the file (cursor at the end to not erasing eventual previous results)
-    resultFile.write("Epoch|TrainCost|TrainAll|TrainRoot|TestCost|TestAll|TestRoot\n") # Record the data for the learning curve (format)
-    resultFile.close()
+    #resultFile = open(outputName + "_train.csv", "a") # Open the file (cursor at the end to not erasing eventual previous results)
+    #resultFile.write("Epoch|TrainCost|TrainAll|TrainRoot|TestCost|TestAll|TestRoot\n") # Record the data for the learning curve (format)
+    #resultFile.close()
     
     # Main loop
     cMatTr = []
@@ -127,11 +127,11 @@ def train(outputName, datasets, params):
         
         # Saving the model (at each epoch)
         print("Saving model...")
-        model.saveModel(outputName) # The function also save the dictionary
+        #model.saveModel(outputName) # The function also save the dictionary
         
-        resultFile = open(outputName + "_train.csv", "a") # Open the file (cursor at the end)
-        resultFile.write("%d|%s|%s\n" % (i, trError.toCsv(), teError.toCsv())) # Record the data for the learning curves
-        resultFile.close()
+        #resultFile = open(outputName + "_train.csv", "a") # Open the file (cursor at the end)
+        #resultFile.write("%d|%s|%s\n" % (i, trError.toCsv(), teError.toCsv())) # Record the data for the learning curves
+        #resultFile.close()
         
     utils.pltCMatrix(cMatTe, str('Test confusion matrix'+', Lr: '+str(learningRate)) )
     utils.pltCMatrix(cMatTr, 'Train confusion matrix')
