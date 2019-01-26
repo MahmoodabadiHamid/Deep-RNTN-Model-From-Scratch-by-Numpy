@@ -8,7 +8,7 @@ Use python 3
 
 import os, sys
 import random
-import numpy as np
+import torch as np
 import train
 import utils
 import vocabulary
@@ -18,9 +18,11 @@ nbEpoch = 60
 miniBatchSize = [5]
 adagradResetNbIter = [6] # Reset every X iterations (0 for never) << does not seem to have that much impact except the performance drop at each reset on the training set
 
+#learningRate = [0.00001, 0.0001, 0.001, 0.01] # << Seems to be the best
 learningRate = [0.01] # << Seems to be the best
-regularisationTerm = [0.00001, 0.0001, 0.001, 0.01]
-#regularisationTerm = [0.00001]
+
+#regularisationTerm = [0.00001, 0.0001, 0.001, 0.01]
+regularisationTerm = [0.00001]
 
 # Path and name where the infos will be saved
 outputDir = "save/"
@@ -29,8 +31,8 @@ outputNameDefault = "train"
 def main(outputName):
     print("Welcome into RNTN implementation 0.6 (recording will be on ", outputName, ")")
     
-    random.seed("MetaMind") # Lucky seed ? Fixed seed for replication
-    np.random.seed(7)
+    #random.seed("MetaMind") # Lucky seed ? Fixed seed for replication
+    #np.random.seed(7)
     
     print("Parsing dataset, creating dictionary...")
     # Dictionary initialisation
