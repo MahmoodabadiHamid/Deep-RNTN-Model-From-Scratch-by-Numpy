@@ -67,6 +67,8 @@ def train(outputName, datasets, params):
     resultFile.close()
     
     # Main loop
+    cMatTr = []
+    cMatTe = []
     for i in range(nbEpoch):
         print("Epoch: %d/%d" % (i+1, nbEpoch))
         
@@ -114,9 +116,9 @@ def train(outputName, datasets, params):
         #utils.pltCMatrix(cMatTr , 'Train')
         
         teError, cMatTe = model.computeError(testingSet, True)
-        print("Test  error: ", teError)
+        #print("Test  error: ", teError)
         #input(cMatTe)
-        utils.pltCMatrix(cMatTe, 'Test' )
+        #utils.pltCMatrix(cMatTe, 'Test' )
         
         
         trErrors.append(trError)
@@ -131,6 +133,9 @@ def train(outputName, datasets, params):
         resultFile.write("%d|%s|%s\n" % (i, trError.toCsv(), teError.toCsv())) # Record the data for the learning curves
         resultFile.close()
         
+    utils.pltCMatrix(cMatTe, str('Test confusion matrix'+', Lr: '+str(learningRate)) )
+    utils.pltCMatrix(cMatTr, 'Train confusion matrix')
+    
     # Record the learning curve
     xEpoch = []
     trRegCost = []
@@ -178,8 +183,8 @@ def train(outputName, datasets, params):
     plt.title('Root only')
     plt.xlabel('Epoch')
     plt.ylabel('% of success')
-    
-    plt.savefig(outputName + '_learningCurve.png')
+    plt.show(outputName + '_learningCurve.png')
+    #plt.savefig(outputName + '_learningCurve.png')
     
     # Return perfs at the end
     #errors = []
