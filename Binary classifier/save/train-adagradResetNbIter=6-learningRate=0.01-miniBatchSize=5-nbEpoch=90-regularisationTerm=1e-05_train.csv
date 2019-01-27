@@ -1,0 +1,10 @@
+Epoch|TrainCost|TrainAll|TrainRoot|TestCost|TestAll|TestRoot
+0|32.585468|69.676253|21.980337|31.270055|69.491525|23.484163
+1|28.415152|70.700165|25.023408|29.343015|69.590799|28.325792
+Epoch|TrainCost|TrainAll|TrainRoot|TestCost|TestAll|TestRoot
+Epoch|TrainCost|TrainAll|TrainRoot|TestCost|TestAll|TestRoot
+Epoch|TrainCost|TrainAll|TrainRoot|TestCost|TestAll|TestRoot
+0|40.203441|68.571911|25.794732|38.761788|68.593626|26.793824
+Epoch|TrainCost|TrainAll|TrainRoot|TestCost|TestAll|TestRoot
+0|40.203441|68.571911|25.794732|38.761788|68.593626|26.793824
+1|35.666191|68.743214|24.886467|35.024266|69.189567|26.975477
