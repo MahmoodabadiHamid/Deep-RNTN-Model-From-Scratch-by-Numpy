@@ -8,7 +8,7 @@ Use python 3
 
 import os, sys
 import random
-import torch as np
+import numpy as np
 import train
 import utils
 import vocabulary
@@ -31,8 +31,8 @@ outputNameDefault = "train"
 def main(outputName):
     print("Welcome into RNTN implementation 0.6 (recording will be on ", outputName, ")")
     
-    #random.seed("MetaMind") # Lucky seed ? Fixed seed for replication
-    #np.random.seed(7)
+    random.seed("MetaMind") # Lucky seed ? Fixed seed for replication
+    np.random.seed(7)
     
     print("Parsing dataset, creating dictionary...")
     # Dictionary initialisation
