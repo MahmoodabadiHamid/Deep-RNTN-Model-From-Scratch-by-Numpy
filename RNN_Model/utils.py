@@ -67,7 +67,7 @@ def pltCMatrix(cMatrix,TrainOrTest):
     cMatrix = cMatrix.astype('float') / cMatrix.sum(axis=1)[:, np.newaxis]
     #Plot normalize confusion matrix
     plt.matshow(cMatrix)
-    plt.title(str(TrainOrTest))
+    plt.title('Confusion matrix')
     plt.colorbar()
     
     plt.ylabel('True label')
@@ -77,10 +77,10 @@ def pltCMatrix(cMatrix,TrainOrTest):
     for i in range(5):
         for j in range(5):
             plt.text(j, i, format(cMatrix[i, j], '.1f'))
-    #plt.savefig(path + str(TrainOrTest) + "_cMat.png")
-    plt.show()
+    plt.savefig(path + str(TrainOrTest) + "_cMat.png")
     print('Saving cMat Done!')
     #plt.show()
+
 
 
 
