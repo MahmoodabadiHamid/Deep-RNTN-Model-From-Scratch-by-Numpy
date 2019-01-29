@@ -22,7 +22,7 @@ class Model:
         # Model parameters
         
         self.wordVectSpace = 25 # World vector size
-        self.nbClass = 2 # 0-4 sentiments
+        self.nbClass = 5 # 0-4 sentiments
         
         self.regularisationTerm = regularisationTerm # Lambda
         
