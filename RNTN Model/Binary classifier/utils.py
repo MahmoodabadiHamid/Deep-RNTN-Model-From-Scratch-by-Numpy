@@ -72,13 +72,14 @@ def pltCMatrix(cMatrix,TrainOrTest):
     plt.xlabel('Predicted label')
     cmap=plt.cm.binary
     plt.imshow(cMatrix, interpolation='nearest', cmap=cmap)
-    for i in range(5):
-        for j in range(5):
+    for i in range(len(cMatrix)):
+        for j in range(len(cMatrix)):
             plt.text(j, i, format(cMatrix[i, j], '.1f'))
     #plt.savefig(path + str(TrainOrTest) + "_cMat.png")
     plt.show()
     print('Saving cMat Done!')
     #plt.show()
+
 
 
 
